@@ -14,9 +14,8 @@ public class C {
 		public static final int INTAKE_2_PORT = 1; 
 		
 		public static final int WRIST_PORT = 2; 
-		public static final int WRIST_2_PORT = 3; 
 		
 		public static final int ELEVATOR_MIN_PORT = 0;
-		public static final int ELEVATOR_MAX_PORT = 1; 
+		public static final int ART_MIN_PORT = 1;
 	}
 }

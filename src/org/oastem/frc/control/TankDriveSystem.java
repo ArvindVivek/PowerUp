@@ -1,5 +1,7 @@
 package org.oastem.frc.control;
 
+import org.oastem.frc.robot.PIDController;
+
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
@@ -82,5 +84,18 @@ public class TankDriveSystem {
 	}
 	public TalonSRX getLeftSlaveDrive() {
 		return leftSlave;
+	}
+	
+	public void configPID(PIDController controller) {
+		rightMaster.config_kP(0, controller.getRightPValue(), 10);
+		rightMaster.config_kI(0, controller.getiValue(), 10);
+		rightMaster.config_kD(0, controller.getdValue(), 10);
+		rightMaster.config_IntegralZone(0, controller.getiZone(), 10);
+		
+		leftMaster.config_kP(0, controller.getLeftPValue(), 10);
+		leftMaster.config_kI(0, controller.getiValue(), 10);
+		leftMaster.config_kD(0, controller.getdValue(), 10);
+		leftMaster.config_IntegralZone(0, controller.getiZone(), 10);
+		
 	}
 }
